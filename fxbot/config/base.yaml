@@ -1,0 +1,95 @@
+# Shared defaults. Every value here is also the schema default (§5); the file exists so an
+# operator can see and change the whole surface in one place. Secrets never appear here.
+symbols: [EURUSD, GBPUSD, USDJPY, AUDUSD, USDCAD]
+timeframe: H1
+
+strategy:
+  ema_fast: 20
+  ema_slow: 50
+  donchian_period: 20
+  atr_period: 14
+  adx_period: 14
+  adx_min: 20.0
+  d1_ema: 50
+  d1_neutral_band_atr: 0.25
+  atr_pct_window: 500
+  atr_pct_floor: 0.20
+  atr_pct_ceiling: 0.90
+  sl_atr_mult: 2.0
+  tp1_r: 1.5
+  tp1_fraction: 0.5
+  trail_atr_mult: 3.0
+  breakeven_at_r: 1.0
+  use_partials: true
+  warmup_bars: 600
+
+risk:
+  risk_per_trade_pct: 0.5
+  daily_loss_limit_pct: 3.0
+  max_drawdown_pct: 10.0
+  max_consecutive_losses: 5
+  reduced_risk_multiplier: 0.5
+  reduced_after_consecutive_losses: 3
+  max_open_positions: 3
+  max_positions_per_symbol: 1
+  max_positions_per_cluster: 2
+  total_open_risk_pct: 1.5
+  max_margin_utilisation_pct: 20.0
+  flatten_on_daily_lockout: false
+  clusters:
+    USD_LONG_BLOC: [USDJPY, USDCAD]
+    USD_SHORT_BLOC: [EURUSD, GBPUSD, AUDUSD]
+
+execution:
+  magic: 990117
+  deviation_points: 20
+  max_spread_points:
+    DEFAULT: 25
+    EURUSD: 15
+    GBPUSD: 20
+    USDJPY: 18
+    AUDUSD: 20
+    USDCAD: 22
+  max_retries: 3
+  retry_backoff_s: 1.5
+  order_comment_prefix: fxbot
+  dry_run: false
+
+session:
+  trade_hours_server: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  skip_friday_after_hour: 19
+  skip_hours_after_weekend_open: 2
+  news_blackout_minutes: 0
+
+costs:
+  commission_per_lot_per_side: 3.50
+  slippage_points:
+    DEFAULT: 3
+  spread_source: historical
+  fixed_spread_points:
+    DEFAULT: 8
+
+data:
+  max_gap_bars: 3
+  max_stale_multiples: 2.0
+  history_years: 8
+
+runtime:
+  post_close_delay_s: 5.0
+  connect_retry_seconds: 300
+  watchdog_multiples: 3.0
+
+paths:
+  data_dir: data
+  state_dir: state
+  log_dir: logs
+  risk_state_file: risk_state.json
+  filling_cache_file: filling_modes.json
+  journal_db: journal.db
+
+alerts:
+  enabled: true
+  min_severity: WARNING
+  heartbeat_url: null
+  digest_hour_server: 0
+  digest_minute_server: 5

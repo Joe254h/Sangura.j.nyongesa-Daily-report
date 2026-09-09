@@ -1,0 +1,15 @@
+# Research environment: no terminal, no orders, PaperBroker only.
+#
+# Costs are the honest Pepperstone Razor numbers; §11.2 additionally requires a stress run
+# at 1.5x spread and 2x slippage, which `fxbot backtest --cost-multiplier` applies on top
+# of these without editing the file.
+execution:
+  dry_run: true
+costs:
+  commission_per_lot_per_side: 3.50
+  spread_source: historical
+  slippage_points:
+    DEFAULT: 3
+alerts:
+  enabled: false
+  min_severity: CRITICAL

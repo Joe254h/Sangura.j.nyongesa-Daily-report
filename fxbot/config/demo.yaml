@@ -1,0 +1,7 @@
+# Demo account. Identical strategy and risk to live: the point of the demo stage (§13.5
+# step 3) is to compare demo trades against the backtest, which only works if nothing but
+# the account differs.
+execution:
+  dry_run: false
+alerts:
+  min_severity: INFO

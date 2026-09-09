@@ -1,0 +1,22 @@
+{
+  "contract_size": 100000.0,
+  "currency_base": "USD",
+  "currency_margin": "USD",
+  "currency_profit": "CAD",
+  "digits": 5,
+  "filling_modes": 2,
+  "freeze_level": 0,
+  "name": "USDCAD",
+  "point": 1e-05,
+  "stops_level": 0,
+  "swap_long": -2.4,
+  "swap_mode": 0,
+  "swap_short": -4.8,
+  "tick_size": 1e-05,
+  "tick_value": 0.73,
+  "tick_value_profit": 0.73,
+  "trade_exemode": 2,
+  "volume_max": 100.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01
+}

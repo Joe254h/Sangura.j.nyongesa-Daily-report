@@ -1,0 +1,11 @@
+# Live account. Promotion to this file is a config change, never a code change (§13.5).
+#
+# §13.5 step 4 requires the first four weeks of live trading at 0.1% risk per trade.
+# Raise to 0.5% only after live expectancy in R is within one standard error of the
+# backtest. Edit this one line to promote; leave everything else alone.
+risk:
+  risk_per_trade_pct: 0.1
+execution:
+  dry_run: false
+alerts:
+  min_severity: WARNING
